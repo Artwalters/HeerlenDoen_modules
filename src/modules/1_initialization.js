@@ -16,7 +16,7 @@ const CONFIG = {
     bearing: -17.6,
     boundary: {
       center: [5.977105864037915, 50.88774161029858],
-      radius: 0.6
+      radius: 2.0  // Vergroot van 0.6km naar 2.0km voor groter toegestaan gebied
     }
   },
   MARKER_ZOOM: {
