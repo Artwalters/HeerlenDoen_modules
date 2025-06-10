@@ -57,6 +57,8 @@ De modules worden sequentieel geladen in deze volgorde:
 
 Elke push naar `main` branch wordt automatisch deployed naar GitHub Pages via GitHub Actions.
 
+**Status**: Deployment in progress... ⏳
+
 ## 📁 Project Structuur
 
 ```
