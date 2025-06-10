@@ -1,104 +1,85 @@
-# Webflow Vite Development Server
+# HeerlenDoen Modules
 
-## 🚀 Installatie & Setup
+Sequential module loading system voor Webflow met Mapbox interactieve kaart functionaliteit.
 
-1. **Open Terminal en navigeer naar de project folder:**
-   ```bash
-   cd /Users/arthur/Desktop/webflow-vite-server
-   ```
+## 🚀 Live Links (Gebruik deze in Webflow!)
 
-2. **Installeer dependencies:**
-   ```bash
-   npm install
-   ```
+### JavaScript (Hoofd module)
+```html
+<script type="module" crossorigin src="https://artwalters.github.io/HeerlenDoen_modules/webflow-app.js"></script>
+```
 
-3. **Start de development server:**
-   ```bash
-   npm run dev
-   ```
+### CSS (Styling)
+```html
+<link rel="stylesheet" href="https://artwalters.github.io/HeerlenDoen_modules/webflow-app.css">
+```
 
-## 🔗 Integratie met Webflow
+## 🔧 Development Setup
 
-### Methode 1: Lokaal testen (aanbevolen voor development)
+Voor lokale development:
 
-1. Start de Vite server met `npm run dev`
-2. Je krijgt een URL zoals: `http://localhost:3000`
-3. In Webflow, ga naar **Project Settings > Custom Code**
-4. Voeg dit toe in de **Head Code**:
-   ```html
-   <script type="module" src="http://localhost:3000/src/main.js"></script>
-   ```
+1. Clone dit repository
+2. Run `npm install`
+3. Run `npm run dev`
+4. De server start op `http://localhost:3000`
 
-### Methode 2: Network URL (voor testen op andere devices)
+### Development links (lokaal testen)
+```html
+<script type="module" crossorigin src="http://localhost:3000/src/main.js"></script>
+<link rel="stylesheet" href="http://localhost:3000/src/main.css">
+```
 
-1. Vite geeft ook een network URL zoals: `http://192.168.1.100:3000`
-2. Gebruik deze URL om vanaf andere devices te testen
-3. In Webflow:
-   ```html
-   <script type="module" src="http://192.168.1.100:3000/src/main.js"></script>
-   ```
+## 📋 Module Overzicht
 
-### Methode 3: Production Build
+De modules worden sequentieel geladen in deze volgorde:
 
-1. Build je project:
-   ```bash
-   npm run build
-   ```
+1. **1_INITIALIZATION.js** - Mapbox setup en globale configuratie
+2. **2_GEOLOCATION.js** - Gebruiker locatie en boundary management
+3. **3_Dataloading.js** - CMS data laden (locaties + AR items)
+4. **4_marker.js** - Kaart markers en filtering
+5. **5_POPUP.js** - Popup functionaliteit en animaties
+6. **6_mapinteractions.js** - Kaart interacties en controls
+7. **7_threejs.js** - 3D functionaliteit
+8. **8_poi.js** - Points of Interest management
+9. **9_walkthrough.js** - Tour functionaliteit
+10. **10_toggle3d.js** - 3D toggle controls
 
-2. Dit maakt een `dist/webflow-app.js` file
-3. Upload deze naar een CDN of GitHub Pages
-4. In Webflow:
-   ```html
-   <script src="https://jouw-cdn.com/webflow-app.js"></script>
-   ```
+## ✨ Features
+
+- **Sequential Loading**: Modules laden in de juiste volgorde
+- **DOM Waiting**: Wacht op Webflow DOM initialisatie
+- **Error Handling**: Robuuste error afhandeling
+- **Hot Reload**: Automatische updates tijdens development
+- **Mobile Responsive**: Werkt op alle apparaten
+- **Performance Optimized**: Geoptimaliseerd voor snelheid
+
+## 🔄 Auto Deployment
+
+Elke push naar `main` branch wordt automatisch deployed naar GitHub Pages via GitHub Actions.
 
 ## 📁 Project Structuur
 
 ```
-webflow-vite-server/
-├── src/
-│   ├── modules/
-│   │   ├── navigation.js    # Navigation functionaliteit
-│   │   ├── animations.js    # Scroll animaties
-│   │   └── forms.js         # Form validatie
-│   └── main.js             # Hoofdbestand
-├── index.html              # Test HTML voor lokaal
-├── vite.config.js          # Vite configuratie
-└── package.json            # Project dependencies
+src/
+├── main.js              # Entry point met sequential loading
+├── main.css             # Hoofd stylesheet
+└── modules/
+    ├── 1_initialization.js    # Map setup
+    ├── 2_geolocation.js       # GPS functionaliteit  
+    ├── 3_dataloading.js       # Data management
+    ├── 4_marker.js            # Markers & filters
+    ├── 5_popup.js             # Popup systeem
+    ├── 6_mapinteractions.js   # Map controls
+    ├── 7_threejs.js           # 3D rendering
+    ├── 8_poi.js               # Points of Interest
+    ├── 9_walkthrough.js       # Tour guide
+    └── 10_toggle3d.js         # 3D toggle
 ```
 
-## ✨ Features
+## 🤝 Contributing
 
-- **Hot Module Replacement**: Wijzigingen worden direct geladen
-- **Module-based**: Code opgedeeld in logische modules
-- **CORS enabled**: Werkt met Webflow's preview
-- **Test indicator**: Groene popup toont verbinding
-
-## 🛠️ Troubleshooting
-
-### "CORS error" in Webflow
-- Zorg dat `cors: true` in vite.config.js staat
-- Gebruik HTTPS met ngrok voor production-like testing
-
-### "Module not found"
-- Check of alle imports de `.js` extensie hebben
-- Controleer of de server draait
-
-### Wijzigingen worden niet geladen
-- Check de browser console voor errors
-- Hard refresh (Cmd+Shift+R) in Webflow preview
-
-## 💡 Tips
-
-1. **VS Code Integration**: Installeer de "Live Server" extensie voor backup
-2. **Browser DevTools**: Gebruik de Network tab om te checken of scripts laden
-3. **Console Logs**: Alle modules loggen wanneer ze laden
-4. **Test Div**: Een groene popup verschijnt rechtsonder als alles werkt
-
-## 🔄 Workflow
-
-1. Start Vite server lokaal
-2. Ontwikkel in VS Code
-3. Test live in Webflow preview
-4. Build voor production wanneer klaar
-5. Deploy naar CDN
+1. Fork het project
+2. Maak je feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit je changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push naar de branch (`git push origin feature/AmazingFeature`)
+5. Open een Pull Request

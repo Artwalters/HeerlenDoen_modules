@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Vite development server voor Webflow custom code",
   "type": "module",
+  "homepage": "https://artwalters.github.io/HeerlenDoen_modules",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
