@@ -135,8 +135,8 @@ map.on('moveend', () => {
    boundaryCenter.lat, boundaryCenter.lng
  );
  
- // Als we te ver weg zijn (meer dan 1 km), vlieg terug
- if (distance > 1) {
+ // Als we te ver weg zijn (meer dan 3 km), vlieg terug
+ if (distance > 3) {
    // Maak blocker overlay
    const overlay = document.createElement('div');
    overlay.id = 'interaction-blocker';
