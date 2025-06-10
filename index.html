@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webflow Vite Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+    .fade-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .test-button {
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+    .test-button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Webflow Vite Development Server Test</h1>
+  
+  <div class="fade-in">
+    <h2>Test Animatie</h2>
+    <p>Deze tekst fade in wanneer je scrolt!</p>
+  </div>
+  
+  <button class="test-button menu-button">Test Menu Toggle</button>
+  
+  <form data-validate>
+    <h3>Test Form</h3>
+    <input type="email" placeholder="Email" required>
+    <button type="submit" class="test-button">Submit</button>
+  </form>
+  
+  <div style="height: 1000px;"></div>
+  
+  <div class="fade-in">
+    <p>Nog een fade-in element!</p>
+  </div>
+  
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
