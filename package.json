@@ -1,0 +1,14 @@
+{
+  "name": "webflow-vite-server",
+  "version": "1.0.0",
+  "description": "Vite development server voor Webflow custom code",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
