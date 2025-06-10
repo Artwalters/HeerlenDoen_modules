@@ -16,8 +16,8 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        entryFileNames: 'webflow-app.js',
-        assetFileNames: 'webflow-app.css'
+        entryFileNames: 'main.js',
+        assetFileNames: 'main.css'
       }
     }
   }
