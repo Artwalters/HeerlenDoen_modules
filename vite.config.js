@@ -11,7 +11,7 @@ export default defineConfig({
     lib: {
       entry: './src/main.js',
       name: 'WebflowApp',
-      fileName: 'webflow-app',
+      fileName: 'main',
       formats: ['iife'] // Immediately Invoked Function Expression voor Webflow
     },
     rollupOptions: {

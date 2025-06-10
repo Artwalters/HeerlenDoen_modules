@@ -6,17 +6,12 @@ Sequential module loading system voor Webflow met Mapbox interactieve kaart func
 
 ### JavaScript (Hoofd module)
 ```html
-<script type="module" src="https://artwalters.github.io/HeerlenDoen_modules/main.js"></script>
+<script src="https://artwalters.github.io/HeerlenDoen_modules/main.js"></script>
 ```
 
 ### CSS (Styling)
 ```html
 <link rel="stylesheet" href="https://artwalters.github.io/HeerlenDoen_modules/main.css">
-```
-
-#### Alternatief (als er CORS problemen zijn):
-```html
-<script type="module" crossorigin src="https://artwalters.github.io/HeerlenDoen_modules/main.js"></script>
 ```
 
 ## 🔧 Development Setup
